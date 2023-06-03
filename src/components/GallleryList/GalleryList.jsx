@@ -12,6 +12,7 @@ function GalleryList ({imageList, getImages}) {
     return(
         <>
         <div>
+            
             {imageList.map(image => (
                 
                 

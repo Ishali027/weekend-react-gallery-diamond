@@ -35,7 +35,9 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
+          <div className="banner-header">
           <h1 className="App-title">Gallery of My Life</h1>
+          </div>
         </header>
         <p>Gallery goes here</p>
         
