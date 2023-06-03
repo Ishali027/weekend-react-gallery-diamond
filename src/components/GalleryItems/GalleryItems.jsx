@@ -1,26 +1,75 @@
 import axios from 'axios';
 import {useState} from  'react';
+import './GalleryItem.css';
 
 
 
 
 
-function GalleryItems (props) {
+function GalleryItems ({getImages, image, id}) {
+    const [selected, setSelected] = useState(false);
+
+    const handleLikes = (id) => {
+        axios.put(`/gallery/like/${id}`)
+        .then((response) => {
+            console.log(response)
+            getImages();
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
 
 
+    
 
 
-
-    return(
+    return (
         <>
-        <p>
-                <div key={image.id}>
-                <img src={image.path} />
-                </div>
-        </p>
+    <div onClick={()=> setSelected(!selected)}>
+        {
+            selected ? (
+                <p>
+                    {image.description}
+                </p>
+            ) : (
+                <p>
+                    <img src={image.path} alt="images" />
+                </p>
+            )
+
+
+
+
+
+        }
+
+        
+
+
+
+
+    </div>
+
+
+    <div>
+        <button className="like-btn" onClick={() => handleLikes(image.id)}>Like</button>
+        <p className="likes">{image.likes}</p>
+    </div>
+    
+        
+    
+
+        
+
+
+
+
+
 
         </>
+
     )
+    
 }
 
 
