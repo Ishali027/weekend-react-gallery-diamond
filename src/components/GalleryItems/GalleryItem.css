@@ -1,19 +1,24 @@
-/* img {
-
+img {
     border-radius: 25%;
-    padding: 5px;
+    padding: 20px;
+}
 
-
+.mngmnt-btns {
+    background-color: orange;
 }
 
 
-
-.like-btn,
+.like-btn{
+    border-radius: 25%;
+    padding: 5px;
+}
 .likes {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 150px
+    border-radius: 25%;
+    padding: 5px;
+}
+.delete-btn {
+    border-radius: 25%;
+    padding: 5px;
 }
 
 .div {
@@ -42,6 +47,6 @@
         0 0 151px #0fa;
 }
 .banner-header {
-    background-color:indianred;
+    background-image: linear-gradient(to right, indianred, orange, yellow, bisque)
 }
- */
+

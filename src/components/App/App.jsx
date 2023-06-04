@@ -3,6 +3,7 @@ import './App.css';
 import {useState, useEffect} from 'react';
 import GalleryList from '../GallleryList/GalleryList';
 import axios from 'axios';
+import GalleryForm from '../GalleryForm/GalleryForm'
 
 function App() {
   const [imageList, setImageList] = useState([]);
@@ -40,7 +41,7 @@ function App() {
           </div>
         </header>
         <p>Gallery goes here</p>
-        
+        <GalleryForm  getImages={getImages}/>
         < GalleryList imageList={imageList} getImages={getImages}/>
       </div>
     );

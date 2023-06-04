@@ -20,7 +20,16 @@ function GalleryItems ({getImages, image, id}) {
     }
 
 
-    
+    const deleteImage = (id) => {
+        axios.delete(`/gallery/${id}`)
+        .then((response) => {
+            console.log(response);
+            getImages();
+        }).catch((error) => {
+            console.log(error);
+        })
+        
+    }
 
 
     return (
@@ -50,14 +59,19 @@ function GalleryItems ({getImages, image, id}) {
 
     </div>
 
+<div className="mngmnt-btns">
 
     <div>
         <button className="like-btn" onClick={() => handleLikes(image.id)}>Like</button>
         <p className="likes">{image.likes}</p>
     </div>
+    <div>
+    <button className="delete-btn" onClick={() => deleteImage(image.id)}>Delete</button>
+
+    </div>
     
         
-    
+</div>    
 
         
 
